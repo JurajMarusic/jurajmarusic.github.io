@@ -9,3 +9,5 @@ redirect_from:
 
 Publications
 ======
+
+*\* denotes co-lead author*
