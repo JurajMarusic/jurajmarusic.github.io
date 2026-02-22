@@ -7,6 +7,37 @@ redirect_from:
   - /about.html
 ---
 
+## Education
+
+<table style="border-collapse:collapse; width:100%;">
+<tr>
+  <td style="white-space:nowrap; vertical-align:top; padding-right:16px; text-align:right; color:#555;">2023&ndash;</td>
+  <td style="border-left:1px solid #ccc; padding-left:16px; vertical-align:top;">
+    <strong>Columbia University, Department of Statistics</strong><br>
+    <em>PhD in Statistics</em> (ongoing)<br>
+    Advisors: John P. Cunningham and Marco Avella Medina
+  </td>
+</tr>
+<tr><td colspan="2" style="height:8px;"></td></tr>
+<tr>
+  <td style="white-space:nowrap; vertical-align:top; padding-right:16px; text-align:right; color:#555;">June 2022</td>
+  <td style="border-left:1px solid #ccc; padding-left:16px; vertical-align:top;">
+    <strong>University of Cambridge, Part III of the Mathematical Tripos</strong><br>
+    <em>Master of Advanced Study</em> (with Distinction)
+  </td>
+</tr>
+<tr><td colspan="2" style="height:8px;"></td></tr>
+<tr>
+  <td style="white-space:nowrap; vertical-align:top; padding-right:16px; text-align:right; color:#555;">July 2021</td>
+  <td style="border-left:1px solid #ccc; padding-left:16px; vertical-align:top;">
+    <strong>University of Zagreb, Department of Mathematics</strong><br>
+    <em>Bachelor of Mathematics</em>
+  </td>
+</tr>
+</table>
+
+---
+
 ## Publications
 
 <small>* denotes co-lead author</small>
