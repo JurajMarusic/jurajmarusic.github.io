@@ -33,9 +33,9 @@ redirect_from:
 
 ---
 
-<div style="display:flex; justify-content:space-between; align-items:baseline;">
+<div style="position:relative;">
 <h2 id="publications">Publications</h2>
-<span style="color:#999; font-size:0.8em; font-weight:400;">* denotes co-lead author</span>
+<span style="position:absolute; right:0; bottom:0.6em; color:#999; font-size:0.8em; font-weight:400;">* denotes co-lead author</span>
 </div>
 
 <ol>
