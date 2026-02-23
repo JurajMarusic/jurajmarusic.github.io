@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-I am a third-year PhD student in the Statistics Department at Columbia University, working under the supervision of <span style="color:#1772d0">John Cunningham</span> and <span style="color:#1772d0">Marco Avella-Medina</span>. My research interests span the intersection of formal statistics and machine learning, where I primarily work on robust Bayesian methods and the implicit bias of optimization in Bayesian deep learning.
+<p>I am a third-year PhD student in the Statistics Department at Columbia University, working under the supervision of <span style="color:#1772d0">John P. Cunningham</span> and <span style="color:#1772d0">Marco Avella Medina</span>. My research interests span the intersection of formal statistics and machine learning, where I primarily work on robust Bayesian methods and the implicit bias of optimization in Bayesian deep learning.</p>
 
 ## Education
 
@@ -33,9 +33,7 @@ I am a third-year PhD student in the Statistics Department at Columbia Universit
 
 ---
 
-## Publications
-
-<small>* denotes co-lead author</small>
+## Publications <span style="color:#999; font-size:0.55em; font-weight:400; vertical-align:middle;">* denotes co-lead author</span>
 
 <ol>
 
