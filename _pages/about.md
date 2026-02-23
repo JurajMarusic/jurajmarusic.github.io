@@ -33,7 +33,10 @@ redirect_from:
 
 ---
 
-## Publications <span style="color:#999; font-size:0.55em; font-weight:400; vertical-align:middle;">* denotes co-lead author</span>
+<div style="display:flex; justify-content:space-between; align-items:baseline;">
+<h2 id="publications">Publications</h2>
+<span style="color:#999; font-size:0.8em; font-weight:400;">* denotes co-lead author</span>
+</div>
 
 <ol>
 
