@@ -10,4 +10,6 @@ authors: 'G. Sopa*, J. Marusic*, M. Avella-Medina, and J. P. Cunningham'
 
 G. Sopa\*, **J. Marusic\***, M. Avella-Medina, and J. P. Cunningham. Submitted (2025).
 
+arXiv: https://arxiv.org/abs/2502.06044
+
 \* co-lead author

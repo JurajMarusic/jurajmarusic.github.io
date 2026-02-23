@@ -61,7 +61,7 @@ redirect_from:
 <strong>Scalable Differentially Private Bayesian Optimization</strong><br>
 <em>G. Sopa*, <span style="color:#1772d0">J. Marusic</span>*, M. Avella-Medina, and J. P. Cunningham</em><br>
 <em>Preprint, 2025</em> &nbsp;
-<a href="https://arxiv.org/abs/2502.06046">[arXiv]</a>
+<a href="https://arxiv.org/abs/2502.06044">[arXiv]</a>
 </li>
 
 </ol>
