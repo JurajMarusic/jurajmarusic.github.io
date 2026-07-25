@@ -23,9 +23,9 @@ redirect_from:
 <div class="bio">
   <p>I am a third-year PhD student in the Statistics Department at Columbia University, advised by <a href="https://stat.columbia.edu/~cunningham/">John P. Cunningham</a> and <a href="https://sites.google.com/site/marcoavellamedina/home">Marco Avella Medina</a>.</p>
 
-  <p>My work sits at the intersection of formal statistics and machine learning. In Bayesian deep learning, I study how the implicit bias of optimization can take the place of hand-crafted priors over network weights, and how choices such as the learning rate shape the function that training converges to. In robust Bayesian inference, I study how posteriors behave when the data are contaminated or the model is misspecified, including a Bayesian analogue of the classical breakdown point.</p>
+  <p>My work sits at the intersection of formal statistics and machine learning. In Bayesian deep learning, I study how the implicit bias of optimization can take the place of hand-crafted priors over network weights, and how choices such as the learning rate shape the function that training converges to. In robust Bayesian inference, I study how posteriors behave when the data are contaminated or the model is misspecified.</p>
 
-  <p>Before Columbia I completed Part III of the Mathematical Tripos at the University of Cambridge, and studied mathematics at the University of Zagreb, Croatia.</p>
+  <p>Before coming to Columbia, I completed Part III of the Mathematical Tripos at the University of Cambridge, and earned my undergraduate degree in mathematics at the University of Zagreb in Croatia.</p>
 </div>
 
 {% comment %}
@@ -51,29 +51,6 @@ redirect_from:
 </ul>
 {% endif %}
 
-<section class="section" id="education">
-  <h2 class="section__title">Education</h2>
-
-  <ul class="entries">
-    <li class="entry">
-      <p class="entry__title">Columbia University</p>
-      <p class="entry__date">2023&ndash;present</p>
-      <p class="entry__sub">PhD in Statistics</p>
-    </li>
-
-    <li class="entry">
-      <p class="entry__title">University of Cambridge</p>
-      <p class="entry__date">2022</p>
-      <p class="entry__sub">Master of Advanced Study &mdash; Part III of the Mathematical Tripos</p>
-    </li>
-
-    <li class="entry">
-      <p class="entry__title">University of Zagreb</p>
-      <p class="entry__date">2021</p>
-      <p class="entry__sub">Bachelor of Mathematics</p>
-    </li>
-  </ul>
-</section>
 
 <section class="section" id="publications">
   <h2 class="section__title">

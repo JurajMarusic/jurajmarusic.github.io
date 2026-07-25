@@ -11,8 +11,5 @@ main:
   - title: "about"
     url: /
 
-  - title: "education"
-    url: /#education
-
   - title: "publications"
     url: /#publications
