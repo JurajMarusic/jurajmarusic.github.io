@@ -97,17 +97,40 @@
   <link rel="next" href="{{ paginator.next_page_path | prepend: seo_url }}">
 {% endif %}
 
-{% if site.social %}
-  <script type="application/ld+json">
-    {
-      "@context" : "http://schema.org",
-      "@type" : "{% if site.social.type %}{{ site.social.type }}{% else %}Person{% endif %}",
-      "name" : "{{ site.social.name | default: site.name }}",
-      "url" : {{ seo_url | jsonify }},
-      "sameAs" : {{ site.social.links | jsonify }}
-    }
-  </script>
+{% comment %}
+  Person schema. `sameAs` is what lets Google connect this site to the same
+  person's Scholar / ORCID / GitHub profiles, so it is built from the author
+  block rather than left null. Explicit site.social.links wins if set.
+{% endcomment %}
+{% if site.social.links %}
+  {% assign seo_sameas = site.social.links %}
+{% else %}
+  {% capture seo_sameas_raw %}
+    {%- if site.author.googlescholar %}{{ site.author.googlescholar }},{% endif -%}
+    {%- if site.author.orcid %}{{ site.author.orcid }},{% endif -%}
+    {%- if site.author.arxiv %}{{ site.author.arxiv }},{% endif -%}
+    {%- if site.author.semantic %}{{ site.author.semantic }},{% endif -%}
+    {%- if site.author.researchgate %}{{ site.author.researchgate }},{% endif -%}
+    {%- if site.author.github %}https://github.com/{{ site.author.github }},{% endif -%}
+    {%- if site.author.linkedin %}https://www.linkedin.com/in/{{ site.author.linkedin }},{% endif -%}
+    {%- if site.author.twitter %}https://x.com/{{ site.author.twitter }},{% endif -%}
+  {% endcapture %}
+  {% assign seo_sameas = seo_sameas_raw | strip | split: "," %}
 {% endif %}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": {{ site.social.name | default: site.author.name | default: site.name | jsonify }},
+    {% if site.author.alternate_name %}"alternateName": {{ site.author.alternate_name | jsonify }},{% endif %}
+    "url": {{ seo_url | jsonify }},
+    {% if site.author.avatar %}"image": {{ site.author.avatar | prepend: "/images/" | prepend: seo_url | jsonify }},{% endif %}
+    {% if site.author.bio %}"jobTitle": {{ site.author.bio | jsonify }},{% endif %}
+    {% if site.author.employer %}"affiliation": { "@type": "Organization", "name": {{ site.author.employer | jsonify }} },{% endif %}
+    {% if site.description %}"description": {{ site.description | jsonify }},{% endif %}
+    "sameAs": {{ seo_sameas | jsonify }}
+  }
+</script>
 
 {% if site.google_site_verification %}
   <meta name="google-site-verification" content="{{ site.google_site_verification }}" />
@@ -141,16 +164,11 @@
   <meta property="og:url" content="{{ page.url | prepend: seo_url | replace: "/index.html", "/" }}">
 {% endif %}
 
-{% if site.og_image %}
-  <script type="application/ld+json">
-    {
-      "@context": "http://schema.org",
-      "@type": "Organization",
-      "url": {{ seo_url | jsonify }},
-      "logo": {{ site.og_image | prepend: "/images/" | prepend: base_path | jsonify }}
-    }
-  </script>
-{% endif %}
+{% comment %}
+  The upstream theme emitted an Organization schema here whose "logo" was the
+  author's headshot. This is a personal site, not an organisation, and the
+  claim conflicts with the Person schema above -- so it is deliberately gone.
+{% endcomment %}
 
 {% if page.header.image %}
   <meta property="og:image" content="{% if page.header.image contains "://" %}{{ page.header.image }}{% else %}{{ page.header.image | prepend: "/images/" | prepend: base_path }}{% endif %}">

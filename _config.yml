@@ -25,6 +25,8 @@ author:
   # Biographic information
   avatar           : "Juraj.jpg"
   name             : "Juraj Marusic"
+  alternate_name   : # Other spelling of your name, e.g. with diacritics. Emitted as schema.org
+                     # alternateName so searches for either spelling match this site.
   pronouns         : # example: "she/her"  
   bio              : "PhD Student in Statistics"
   location         : "New York, NY, USA"
