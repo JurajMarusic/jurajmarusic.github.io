@@ -4,15 +4,15 @@
 # links. Removing a link prevents it from showing in the header, but does not
 # prevent it from being included in the site.
 #
-# NOTE that only one of the CV options should be selected, the first is for the
-#      Markdown formatted page while the second is generated using JSON.
+# Titles are lower case by design -- the navigation is deliberately quiet
+# relative to the page heading.
 
 main:
-  - title: "About"
+  - title: "about"
     url: /
 
-  - title: "Education"
+  - title: "education"
     url: /#education
 
-  - title: "Publications"
+  - title: "publications"
     url: /#publications

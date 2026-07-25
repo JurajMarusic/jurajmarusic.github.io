@@ -1,5 +1,8 @@
 {
-	"name": "OOjs UI icon academic-progressive",
+	"name": "Juraj Marusic",
+	"short_name": "Juraj Marusic",
+	"theme_color": "#1b4a8f",
+	"background_color": "#ffffff",
 	"icons": [
 		{
 			"src": "/images/favicon-192x192.png",

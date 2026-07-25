@@ -5,38 +5,34 @@
 <!-- Support for Academicons -->
 <link rel="stylesheet" href="{{ base_path }}/assets/css/academicons.css"/>
 
-<!-- favicon from https://commons.wikimedia.org/wiki/File:OOjs_UI_icon_academic-progressive.svg -->
-<link rel="apple-touch-icon" sizes="180x180" href="{{ base_path }}/images/apple-touch-icon-180x180.png"/>
-<link rel="icon" type="image/svg+xml" href="{{ base_path }}/images/favicon.svg"/>
+{% comment %}
+  Favicon: the Columbia crown, a flat navy silhouette that stays legible at
+  16px.
+
+  Safari specifics, all confirmed against the server log:
+   - it requests /favicon.ico, /apple-touch-icon.png and
+     /apple-touch-icon-precomposed.png from the site ROOT, ignoring these
+     tags, so those files exist at the root as well as under /images/;
+   - its .ico decoder does not reliably read PNG-compressed entries, so
+     favicon.ico is written with classic BMP/DIB entries;
+   - it is unreliable about icon URLs carrying a ?v= cache-busting query, so
+     these are bare paths. To force a refresh after changing an icon, quit
+     Safari fully and clear ~/Library/Safari/Favicon Cache.
+{% endcomment %}
+<link rel="icon" href="{{ base_path }}/favicon.ico" sizes="any"/>
+<link rel="shortcut icon" type="image/x-icon" href="{{ base_path }}/favicon.ico"/>
+<link rel="icon" type="image/png" href="{{ base_path }}/images/favicon-16x16.png" sizes="16x16"/>
 <link rel="icon" type="image/png" href="{{ base_path }}/images/favicon-32x32.png" sizes="32x32"/>
 <link rel="icon" type="image/png" href="{{ base_path }}/images/favicon-192x192.png" sizes="192x192"/>
+<link rel="apple-touch-icon" sizes="180x180" href="{{ base_path }}/apple-touch-icon.png"/>
 <link rel="manifest" href="{{ base_path }}/images/manifest.json"/>
-<link rel="icon" href="/images/favicon.ico"/>
-<meta name="theme-color" content="#ffffff"/>
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)"/>
+<meta name="theme-color" content="#0f0f0f" media="(prefers-color-scheme: dark)"/>
 
-<!-- Typography: Inter font -->
+<!-- Typography: Inter. Everything else in the skin uses the system mono stack. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
-<style>
-  html {
-    font-size: 16px !important;
-  }
-  body {
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  }
-  h1, h2, h3, h4, h5, h6 {
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    font-weight: 600;
-  }
-  strong, b {
-    font-weight: 600;
-  }
-  .author__name {
-    font-size: 1.4em;
-  }
-</style>
 
 <script>history.scrollRestoration = "manual";</script>
 

@@ -1,70 +1,125 @@
 ---
 permalink: /
-title: "Juraj Marusic"
-author_profile: true
+title: "**Juraj** Marusic"
+author_profile: false
 redirect_from:
   - /about/
   - /about.html
 ---
 
-<p>I am a third-year PhD student in the Statistics Department at Columbia University, working under the supervision of <span style="color:#1772d0">John P. Cunningham</span> and <span style="color:#1772d0">Marco Avella Medina</span>. My research interests span the intersection of formal statistics and machine learning, where I primarily work on robust Bayesian methods and the implicit bias of optimization in Bayesian deep learning.</p>
+<p class="page__lede">PhD Student in Statistics, Columbia University</p>
 
-## Education
+{% include base_path %}
 
-<div style="display:flex; flex-direction:column; gap:16px;">
+<figure class="hero__photo">
+  <img src="{{ site.author.avatar | prepend: '/images/' | prepend: base_path }}" alt="{{ site.author.name }}" fetchpriority="high" />
+  <figcaption class="hero__caption">
+    Department of Statistics<br>
+    Columbia University<br>
+    New York, NY, USA
+  </figcaption>
+</figure>
 
-<div>
-  <strong>Columbia University, Department of Statistics</strong> &nbsp;<span style="color:#888; font-size:0.9em;">2023&ndash;present</span><br>
-  <em>PhD in Statistics</em><br>
-  <span style="color:#555; font-size:0.95em;">Advisors: John P. Cunningham and Marco Avella Medina</span>
+<div class="bio">
+  <p>I am a third-year PhD student in the Statistics Department at Columbia University, advised by <a href="https://stat.columbia.edu/~cunningham/">John P. Cunningham</a> and <a href="https://sites.google.com/site/marcoavellamedina/home">Marco Avella Medina</a>.</p>
+
+  <p>My work sits at the intersection of formal statistics and machine learning. I am interested in robust Bayesian methods &mdash; how inference behaves when the model is misspecified or the data contaminated &mdash; and in the implicit bias of optimization in Bayesian deep learning.</p>
+
+  <p>Before Columbia I completed Part III of the Mathematical Tripos at the University of Cambridge, and studied mathematics at the University of Zagreb.</p>
 </div>
 
-<div>
-  <strong>University of Cambridge, Part III of the Mathematical Tripos</strong> &nbsp;<span style="color:#888; font-size:0.9em;">June 2022</span><br>
-  <em>Master of Advanced Study</em>, with Distinction
-</div>
+{% comment %}
+  Written out rather than linked: no mailto, and the address is split so it
+  does not read as an address to naive scrapers. Only the domain's dots are
+  spelled out, so the local part stays readable.
+{% endcomment %}
+{% assign email_parts = site.author.email | split: "@" %}
+<p class="contact">
+  You can reach me at
+  <span class="contact__address">{{ email_parts[0] }} [at] {{ email_parts[1] | replace: ".", " [dot] " }}</span>
+</p>
 
-<div>
-  <strong>University of Zagreb, Department of Mathematics</strong> &nbsp;<span style="color:#888; font-size:0.9em;">July 2021</span><br>
-  <em>Bachelor of Mathematics</em>
-</div>
+{% comment %}
+  Google Scholar now sits beside the publications heading, so this row only
+  appears once one of the remaining profiles is filled in.
+{% endcomment %}
+{% if site.author.cv or site.author.github or site.author.linkedin %}
+<ul class="hero__links">
+  {% if site.author.cv %}<li><a href="{% if site.author.cv contains '://' %}{{ site.author.cv }}{% else %}{{ base_path }}{{ site.author.cv }}{% endif %}"><i class="fas fa-fw fa-file-lines" aria-hidden="true"></i>CV</a></li>{% endif %}
+  {% if site.author.github %}<li><a href="https://github.com/{{ site.author.github }}"><i class="fab fa-fw fa-github" aria-hidden="true"></i>GitHub</a></li>{% endif %}
+  {% if site.author.linkedin %}<li><a href="https://www.linkedin.com/in/{{ site.author.linkedin }}"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i>LinkedIn</a></li>{% endif %}
+</ul>
+{% endif %}
 
-</div>
+<section class="section" id="education">
+  <h2 class="section__title">Education</h2>
 
----
+  <ul class="entries">
+    <li class="entry">
+      <p class="entry__title">Columbia University</p>
+      <p class="entry__date">2023&ndash;present</p>
+      <p class="entry__sub">PhD in Statistics</p>
+      <p class="entry__note">Advisors: John P. Cunningham and Marco Avella Medina</p>
+    </li>
 
-<div style="position:relative;">
-<h2 id="publications">Publications</h2>
-<span style="position:absolute; right:0; bottom:0.6em; color:#999; font-size:0.8em; font-weight:400;">* denotes co-lead author</span>
-</div>
+    <li class="entry">
+      <p class="entry__title">University of Cambridge</p>
+      <p class="entry__date">2022</p>
+      <p class="entry__sub">Master of Advanced Study &mdash; Part III of the Mathematical Tripos</p>
+    </li>
 
-<ol>
+    <li class="entry">
+      <p class="entry__title">University of Zagreb, Croatia</p>
+      <p class="entry__date">2021</p>
+      <p class="entry__sub">Bachelor of Mathematics</p>
+    </li>
+  </ul>
+</section>
 
-<li>
-<strong>The Benefits of Sampling in Unregularized Variational Training of Deep Neural Networks</strong><br>
-<em><span style="color:#1772d0">J. Marusic</span>*, J. Wenger*, B. Coker, and J. P. Cunningham</em><br>
-<em>Preprint, 2026</em>
-</li>
+<section class="section" id="publications">
+  <h2 class="section__title">
+    Publications
+    <span class="section__note">* denotes co-lead author</span>
+  </h2>
 
-<li>
-<strong>A Theoretical Framework for M-posteriors: Frequentist Guarantees and Robustness Properties</strong><br>
-<em><span style="color:#1772d0">J. Marusic</span>, M. Avella-Medina, and C. Rush</em><br>
-<em>Preprint, 2025</em> &nbsp;
-<a href="https://arxiv.org/abs/2510.01358">[arXiv]</a>
-</li>
+  {% if site.author.googlescholar %}
+    <p class="section__intro">A full list of publications can be found on my <a href="{{ site.author.googlescholar }}">Google Scholar profile</a>.</p>
+  {% endif %}
 
-<li>
-<strong>Variational Deep Learning via Implicit Regularization</strong><br>
-<em>J. Wenger, B. Coker, <span style="color:#1772d0">J. Marusic</span>, and J. P. Cunningham</em><br>
-<em>International Conference on Learning Representations (ICLR), 2026</em> &nbsp;
-<a href="https://arxiv.org/abs/2505.20235">[arXiv]</a>
-</li>
+  <ol class="pubs">
+    <li class="pub">
+      <p class="pub__title">Variational Deep Learning via Implicit Regularization</p>
+      <p class="pub__authors">J. Wenger, B. Coker, <span class="me">J. Marusic</span>, and J. P. Cunningham</p>
+      <div class="pub__meta">
+        <p class="pub__venue">International Conference on Learning Representations (ICLR), 2026</p>
+        <p class="pub__links"><a href="https://arxiv.org/abs/2505.20235">arXiv</a></p>
+      </div>
+    </li>
 
-<li>
-<strong>Scalable Differentially Private Bayesian Optimization</strong><br>
-<em>G. Sopa*, <span style="color:#1772d0">J. Marusic</span>*, M. Avella-Medina, and J. P. Cunningham</em><br>
-<em>Preprint, 2025</em> &nbsp;
-<a href="https://arxiv.org/abs/2502.06044">[arXiv]</a>
-</li>
+    <li class="pub">
+      <p class="pub__title">Characterizing the Edge of Stability in Variational Training Without Priors</p>
+      <p class="pub__authors"><span class="me">J. Marusic</span>*, J. Wenger*, B. Coker, and J. P. Cunningham</p>
+      <div class="pub__meta">
+        <p class="pub__venue">Preprint, 2026</p>
+      </div>
+    </li>
 
-</ol>
+    <li class="pub">
+      <p class="pub__title">A Theoretical Framework for M-posteriors: Frequentist Guarantees and Robustness Properties</p>
+      <p class="pub__authors"><span class="me">J. Marusic</span>, M. Avella-Medina, and C. Rush</p>
+      <div class="pub__meta">
+        <p class="pub__venue">Preprint, 2025</p>
+        <p class="pub__links"><a href="https://arxiv.org/abs/2510.01358">arXiv</a></p>
+      </div>
+    </li>
+
+    <li class="pub">
+      <p class="pub__title">Differentially Private Hyperparameter Tuning using Local Bayesian Optimization</p>
+      <p class="pub__authors">G. Sopa*, <span class="me">J. Marusic</span>*, M. Avella-Medina, and J. P. Cunningham</p>
+      <div class="pub__meta">
+        <p class="pub__venue">Preprint, 2025</p>
+        <p class="pub__links"><a href="https://arxiv.org/abs/2502.06044">arXiv</a></p>
+      </div>
+    </li>
+  </ol>
+</section>

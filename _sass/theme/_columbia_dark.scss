@@ -1,0 +1,75 @@
+/* ==========================================================================
+    COLUMBIA THEME - DARK VERSION
+
+    The light theme's blues swap roles: Columbia Blue itself leads here, since
+    on a near-black ground it reads at roughly 12:1, while the deep blue drops
+    back to rules and fills.
+
+    Note: imported after _columbia_light.scss, so the Sass scalars below are
+    the ones the rest of the template compiles against. They are kept
+    identical to the light theme on purpose -- only the CSS custom properties
+    differ, and those switch at runtime via html[data-theme].
+   ========================================================================== */
+
+/* Columbia palette */
+$columbia-blue              : #b9d9eb;
+$columbia-mid               : #4b87c4;
+$columbia-deep              : #1d4f91;
+$columbia-deeper            : #14386a;
+$columbia-navy              : #0d2340;
+
+/* Greyscale ramp */
+$primary-color              : $columbia-deep;
+$gray                       : #6b6b6b;
+$dark-gray                  : #2b2b2b;
+$darker-gray                : #111111;
+$light-gray                 : #949494;
+$lighter-gray               : #e6e6e6;
+
+/* Color codes used for the site */
+$danger-color               : #b3261e;
+$info-color                 : $columbia-deep;
+$notice-color               : #6b6b6b;
+$success-color              : #1e7a4d;
+$warning-color              : #8a6100;
+
+/* Other basic settings for the template */
+$border-radius              : 3px;
+$box-shadow                 : none;
+$global-transition          : all 0.18s ease;
+$masthead-height            : 64px;
+$navicon-width              : 22px;
+$navicon-height             : 2px;
+$sidebar-link-max-width     : 260px;
+$sidebar-screen-min-width   : 1024px;
+
+html[data-theme="dark"] {
+    --global-base-color                 : #{$columbia-blue};
+    --global-bg-color                   : #0f1419;
+    --global-footer-bg-color            : #080c10;
+    --global-border-color               : #26313b;
+    --global-dark-border-color          : #33414e;
+    --global-code-background-color      : #172029;
+    --global-code-text-color            : #d5dee6;
+    --global-fig-caption-color          : #9aa8b4;
+    --global-link-color                 : #{$columbia-blue};
+    --global-link-color-hover           : #dcecf6;
+    --global-link-color-visited         : #{$columbia-blue};
+    --global-masthead-link-color        : #97a5b1;
+    --global-masthead-link-color-hover  : #{$columbia-blue};
+    --global-text-color                 : #e6edf3;
+    --global-text-color-light           : #9aa8b4;
+    --global-thead-color                : #172029;
+
+    /* Skin tokens, consumed by _sass/layout/_skin.scss */
+    --accent                            : #{$columbia-blue};
+    --accent-hover                      : #dcecf6;
+    --accent-soft                       : #2c4f74;
+    --accent-wash                       : #16222e;
+    --rule                              : #26313b;
+    --rule-strong                       : #2c4f74;
+    --muted                             : #a7b4c0;
+    --faint                             : #7d8b97;
+    --surface                           : #172029;
+    --footer-text                       : #9aa8b4;
+}

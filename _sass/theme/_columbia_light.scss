@@ -1,0 +1,72 @@
+/* ==========================================================================
+    COLUMBIA THEME - LIGHT VERSION
+
+    Built around Columbia Blue (Pantone 290, #B9D9EB). That blue is far too
+    light to carry text on white -- roughly 1.4:1 against the page -- so it is
+    used for rules, fills and hover states, while a deeper Columbia blue
+    (#1D4F91, about 8:1 on white) carries links, the affiliation line and the
+    active navigation item. The dark theme flips the pair.
+   ========================================================================== */
+
+/* Columbia palette */
+$columbia-blue              : #b9d9eb;  /* Pantone 290 -- the official light blue */
+$columbia-mid               : #4b87c4;
+$columbia-deep              : #1d4f91;
+$columbia-deeper            : #14386a;
+$columbia-navy              : #0d2340;
+
+/* Greyscale ramp */
+$primary-color              : $columbia-deep;
+$gray                       : #6b6b6b;
+$dark-gray                  : #2b2b2b;
+$darker-gray                : #111111;
+$light-gray                 : #949494;
+$lighter-gray               : #e6e6e6;
+
+/* Color codes used for the site */
+$danger-color               : #b3261e;
+$info-color                 : $columbia-deep;
+$notice-color               : #6b6b6b;
+$success-color              : #1e7a4d;
+$warning-color              : #8a6100;
+
+/* Other basic settings for the template */
+$border-radius              : 3px;
+$box-shadow                 : none;
+$global-transition          : all 0.18s ease;
+$masthead-height            : 64px;
+$navicon-width              : 22px;
+$navicon-height             : 2px;
+$sidebar-link-max-width     : 260px;
+$sidebar-screen-min-width   : 1024px;
+
+:root {
+    --global-base-color                 : #{$columbia-deep};
+    --global-bg-color                   : #ffffff;
+    --global-footer-bg-color            : #{$columbia-navy};
+    --global-border-color               : #e6e6e6;
+    --global-dark-border-color          : #d6d6d6;
+    --global-code-background-color      : #f4f8fb;
+    --global-code-text-color            : #{$dark-gray};
+    --global-fig-caption-color          : #{$gray};
+    --global-link-color                 : #{$columbia-deep};
+    --global-link-color-hover           : #{$columbia-deeper};
+    --global-link-color-visited         : #{$columbia-deep};
+    --global-masthead-link-color        : #4a4a4a;
+    --global-masthead-link-color-hover  : #{$columbia-deep};
+    --global-text-color                 : #1a1a1a;
+    --global-text-color-light           : #{$gray};
+    --global-thead-color                : #eef5fa;
+
+    /* Skin tokens, consumed by _sass/layout/_skin.scss */
+    --accent                            : #{$columbia-deep};
+    --accent-hover                      : #{$columbia-deeper};
+    --accent-soft                       : #{$columbia-blue};
+    --accent-wash                       : #eef5fa;
+    --rule                              : #e6e6e6;
+    --rule-strong                       : #{$columbia-blue};
+    --muted                             : #5c5c5c;
+    --faint                             : #8a8a8a;
+    --surface                           : #f4f8fb;
+    --footer-text                       : #c9d6e4;
+}

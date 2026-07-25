@@ -39,5 +39,8 @@
 
     "vendor/font-awesome/fontawesome",
     "vendor/font-awesome/solid",
-    "vendor/font-awesome/brands"
+    "vendor/font-awesome/brands",
+
+    /* Imported last so it overrides the stock theme rules above. */
+    "layout/skin"
 ;

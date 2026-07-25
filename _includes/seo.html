@@ -7,7 +7,18 @@
 {% assign seo_url = seo_url | default: site.github.url %}
 
 {% if page.title %}
-  {% assign seo_title = page.title | append: " " | append: site.title_separator | append: " " | append: site.title %}
+  {% comment %}
+    Titles may contain Markdown (the home page bolds the given name), so the
+    comparison is made against the rendered, tag-stripped text. On the home
+    page that equals the site title, and appending it again would render
+    "Juraj Marusic - Juraj Marusic".
+  {% endcomment %}
+  {% assign seo_title_plain = page.title | markdownify | strip_html | strip_newlines | strip %}
+  {% if seo_title_plain == site.title %}
+    {% assign seo_title = seo_title_plain %}
+  {% else %}
+    {% assign seo_title = seo_title_plain | append: " " | append: site.title_separator | append: " " | append: site.title %}
+  {% endif %}
 {% endif %}
 
 {% if seo_title %}
@@ -123,6 +134,8 @@
   <meta property="og:description" name="description" content="{{ seo_description }}">
 {% elsif site.og_description %}
   <meta property="og:description" name="description" content="{{ site.og_description }}">
+{% elsif site.description %}
+  <meta property="og:description" name="description" content="{{ site.description }}">
 {% endif %}
 {% if seo_url %}
   <meta property="og:url" content="{{ page.url | prepend: seo_url | replace: "/index.html", "/" }}">
@@ -143,5 +156,11 @@
   <meta property="og:image" content="{% if page.header.image contains "://" %}{{ page.header.image }}{% else %}{{ page.header.image | prepend: "/images/" | prepend: base_path }}{% endif %}">
 {% elsif page.header.overlay_image %}
   <meta property="og:image" content="{% if page.header.overlay_image contains "://" %}{{ page.header.overlay_image }}{% else %}{{ page.header.overlay_image | prepend: "/images/" | prepend: base_path }}{% endif %}">
+{% elsif site.og_image %}
+  {% comment %}
+    Site-wide fallback, so pages without their own header image still get a
+    preview card. Upstream only wires og_image into the JSON-LD logo above.
+  {% endcomment %}
+  <meta property="og:image" content="{% if site.og_image contains "://" %}{{ site.og_image }}{% else %}{{ site.og_image | prepend: "/images/" | prepend: base_path }}{% endif %}">
 {% endif %}
 <!-- end Open Graph protocol -->
