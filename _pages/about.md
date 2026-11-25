@@ -17,11 +17,11 @@ nav:
 
 <h3 id="about">About me</h3>
 
-<p>I am a third-year PhD student in the Statistics Department at Columbia University, advised by <a href="https://stat.columbia.edu/~cunningham/">John P. Cunningham</a> and <a href="https://sites.google.com/site/marcoavellamedina/home">Marco Avella Medina</a>.</p>
+<p>I'm a fourth-year PhD student in Statistics at Columbia University, where I'm advised by <a href="https://stat.columbia.edu/~cunningham/">John P. Cunningham</a> and <a href="https://sites.google.com/site/marcoavellamedina/home">Marco Avella Medina</a>.</p>
 
-<p>My work sits at the intersection of formal statistics and machine learning. In Bayesian deep learning, I study how the implicit bias of optimization can take the place of hand-crafted priors over network weights, and how choices such as the learning rate shape the function that training converges to. In robust Bayesian inference, I study how posteriors behave when the data are contaminated or the model is misspecified.</p>
+<p>I work between statistics and machine learning, mostly on two questions. The first is about Bayesian deep learning: can the implicit bias of the optimizer do the job we usually give to a prior over network weights, and how do choices like the learning rate shape what a network ends up learning? The second is about robust Bayesian inference: what happens to the posterior when some of the data are contaminated, or when the model is simply wrong?</p>
 
-<p>Before coming to Columbia, I completed Part III of the Mathematical Tripos at the University of Cambridge, and earned my undergraduate degree in mathematics at the University of Zagreb in Croatia.</p>
+<p>Before Columbia, I did Part III of the Mathematical Tripos at the University of Cambridge, and before that I studied mathematics as an undergraduate at the University of Zagreb in Croatia.</p>
 
 <h3 id="publications">Publications</h3>
 
