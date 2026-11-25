@@ -1,0 +1,207 @@
+/* Home page: plain-academic style. Dark top bar, portrait column on the
+   left, plain sections with small headings on the right. */
+
+:root {
+  --bg: #ffffff;
+  --text: #333333;
+  --muted: #777777;
+  --rule: #e5e5e5;
+  --link: #1d5fa8;
+  --link-hover: #0b3d73;
+  --bar: #222222;
+  --bar-text: #bbbbbb;
+  --bar-text-hover: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #181a1b;
+    --text: #d8d8d8;
+    --muted: #9a9a9a;
+    --rule: #333638;
+    --link: #7ab3ef;
+    --link-hover: #a9cff6;
+    --bar: #0e0f10;
+    --bar-text: #a0a0a0;
+    --bar-text-hover: #ffffff;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-padding-top: 4.5rem; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--link); text-decoration: none; }
+a:hover { color: var(--link-hover); text-decoration: underline; }
+
+/* ---------- Top bar ---------- */
+
+.topbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 10;
+  background: var(--bar);
+  border-bottom: 1px solid #080808;
+}
+
+.topbar__inner {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 50px;
+}
+
+.topbar__brand {
+  color: var(--bar-text-hover);
+  font-size: 18px;
+  padding: 14px 24px 14px 0;
+}
+.topbar__brand:hover { color: var(--bar-text-hover); text-decoration: none; }
+
+.topbar__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.topbar__links a {
+  display: block;
+  padding: 15px 14px;
+  color: var(--bar-text);
+  font-size: 15px;
+}
+.topbar__links a:hover { color: var(--bar-text-hover); text-decoration: none; }
+
+.topbar__toggle-input { display: none; }
+.topbar__toggle { display: none; }
+
+/* ---------- Two-column body ---------- */
+
+.wrap {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 80px 16px 40px;
+  display: grid;
+  grid-template-columns: 230px minmax(0, 1fr);
+  gap: 48px;
+}
+
+.side {
+  position: sticky;
+  top: 80px;
+  align-self: start;
+}
+
+.side__photo {
+  display: block;
+  width: 100%;
+  max-width: 230px;
+  height: auto;
+  border-radius: 4px;
+}
+
+.side__name {
+  margin: 14px 0 2px;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.side__role {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.side__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+.side__links li { padding: 3px 0; }
+.side__email { color: var(--text); word-break: break-word; }
+
+/* ---------- Main column ---------- */
+
+.main h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 36px 0 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--rule);
+}
+.main h3:first-child { margin-top: 0; }
+
+.main p { margin: 0 0 12px; }
+
+.main ul { padding-left: 22px; margin: 0 0 12px; }
+.main li { margin-bottom: 6px; }
+
+.note { color: var(--muted); font-size: 14px; }
+
+/* Publications */
+.pubs { list-style: none; padding-left: 0 !important; }
+.pubs li { margin-bottom: 16px; }
+.pub__title { font-weight: 700; }
+.pub__venue { font-style: italic; }
+.me { text-decoration: underline; text-underline-offset: 2px; }
+
+.foot {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 20px 16px 32px;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* ---------- Small screens ---------- */
+
+@media (max-width: 760px) {
+  .wrap {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding-top: 72px;
+  }
+  .side { position: static; text-align: center; }
+  .side__photo { margin: 0 auto; max-width: 180px; }
+
+  .topbar__toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-left: auto;
+    padding: 10px;
+    cursor: pointer;
+  }
+  .topbar__toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--bar-text);
+  }
+  .topbar__links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    padding-bottom: 8px;
+  }
+  .topbar__toggle-input:checked ~ .topbar__links { display: flex; }
+  .topbar__links a { padding: 8px 0; }
+}

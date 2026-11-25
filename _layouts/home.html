@@ -1,0 +1,69 @@
+---
+layout: compress
+---
+{% comment %}
+  Standalone home-page layout in the plain-academic style: a dark top bar,
+  a left column with the portrait and contact links, and the main text in
+  a right column. It does not load the Minimal Mistakes stylesheet; all
+  styling lives in /assets/css/home.css.
+{% endcomment %}
+{% include base_path %}
+<!doctype html>
+<html lang="{{ site.locale | slice: 0,2 }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include seo.html %}
+    <link rel="icon" type="image/x-icon" href="{{ base_path }}/favicon.ico"/>
+    <link rel="icon" type="image/png" href="{{ base_path }}/images/favicon-32x32.png" sizes="32x32"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ base_path }}/apple-touch-icon.png"/>
+    <link rel="manifest" href="{{ base_path }}/images/manifest.json"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ base_path }}/assets/css/home.css">
+  </head>
+
+  <body>
+    <nav class="topbar" aria-label="Main navigation">
+      <div class="topbar__inner">
+        <a class="topbar__brand" href="{{ base_path }}/">{{ page.short_name | default: site.author.name }}</a>
+        <input type="checkbox" id="nav-toggle" class="topbar__toggle-input" aria-label="Toggle navigation">
+        <label for="nav-toggle" class="topbar__toggle" aria-hidden="true"><span></span><span></span><span></span></label>
+        <ul class="topbar__links">
+          {% for link in page.nav %}
+            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </nav>
+
+    <div class="wrap">
+      <aside class="side">
+        <img class="side__photo" src="{{ site.author.avatar | prepend: '/images/' | prepend: base_path }}" alt="{{ site.author.name }}" fetchpriority="high">
+        <p class="side__name">{{ site.author.name }}</p>
+        <p class="side__role">
+          PhD Student<br>
+          Department of Statistics<br>
+          Columbia University
+        </p>
+        {% assign email_parts = site.author.email | split: "@" %}
+        <ul class="side__links">
+          <li><span class="side__email">{{ email_parts[0] }} [at] {{ email_parts[1] | replace: ".", " [dot] " }}</span></li>
+          {% if site.author.googlescholar %}<li><a href="{{ site.author.googlescholar }}">Google Scholar</a></li>{% endif %}
+          {% if site.author.cv %}<li><a href="{% if site.author.cv contains '://' %}{{ site.author.cv }}{% else %}{{ base_path }}{{ site.author.cv }}{% endif %}">CV</a></li>{% endif %}
+          {% if site.author.github %}<li><a href="https://github.com/{{ site.author.github }}">GitHub</a></li>{% endif %}
+          {% if site.author.linkedin %}<li><a href="https://www.linkedin.com/in/{{ site.author.linkedin }}">LinkedIn</a></li>{% endif %}
+        </ul>
+      </aside>
+
+      <main class="main">
+        {{ content }}
+      </main>
+    </div>
+
+    <footer class="foot">
+      &copy; {{ site.time | date: "%Y" }} {{ site.author.name }}
+    </footer>
+  </body>
+</html>
