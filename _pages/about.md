@@ -32,6 +32,7 @@ nav:
     <span class="pub__title">Characterizing the Edge of Stability in Variational Training Without Priors</span><br>
     <span class="me">J. Marusic</span>*, J. Wenger*, B. Coker, and J. P. Cunningham<br>
     <span class="pub__venue">Conference on Neural Information Processing Systems (NeurIPS), 2026</span>
+    [<a href="https://arxiv.org/abs/2611.15990">arXiv</a>]
   </li>
 
   <li>

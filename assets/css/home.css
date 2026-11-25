@@ -13,19 +13,8 @@
   --bar-text-hover: #ffffff;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #181a1b;
-    --text: #d8d8d8;
-    --muted: #9a9a9a;
-    --rule: #333638;
-    --link: #7ab3ef;
-    --link-hover: #a9cff6;
-    --bar: #0e0f10;
-    --bar-text: #a0a0a0;
-    --bar-text-hover: #ffffff;
-  }
-}
+/* Always light: tell the browser not to apply its own dark styling. */
+html { color-scheme: light; }
 
 * { box-sizing: border-box; }
 
@@ -160,7 +149,12 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
 .pubs li { margin-bottom: 16px; }
 .pub__title { font-weight: 700; }
 .pub__venue { font-style: italic; }
-.me { text-decoration: underline; text-underline-offset: 2px; }
+/* Own name in author lists: a thin box around it. */
+.me {
+  border: 1px solid var(--text);
+  padding: 0 3px;
+  white-space: nowrap;
+}
 
 .foot {
   max-width: 1040px;
