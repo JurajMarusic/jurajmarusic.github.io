@@ -30,7 +30,7 @@ nav:
 <ul class="pubs">
   <li>
     <span class="pub__title">Characterizing the Edge of Stability in Variational Training Without Priors</span><br>
-    <span class="me">J. Marusic</span>*, J. Wenger*, B. Coker, and J. P. Cunningham<br>
+    <span class="me">J. Marusic*</span>, J. Wenger*, B. Coker, and J. P. Cunningham<br>
     <span class="pub__venue">Conference on Neural Information Processing Systems (NeurIPS), 2026</span>
     [<a href="https://arxiv.org/abs/2611.15990">arXiv</a>]
   </li>
@@ -51,7 +51,7 @@ nav:
 
   <li>
     <span class="pub__title">Differentially Private Hyperparameter Tuning using Local Bayesian Optimization</span><br>
-    G. Sopa*, <span class="me">J. Marusic</span>*, M. Avella-Medina, and J. P. Cunningham<br>
+    G. Sopa*, <span class="me">J. Marusic*</span>, M. Avella-Medina, and J. P. Cunningham<br>
     <span class="pub__venue">Preprint, 2025</span>
     [<a href="https://arxiv.org/abs/2502.06044">arXiv</a>]
   </li>
